@@ -16,3 +16,19 @@ stages:
     - path: data/raw/SeoulBikeData.csv
       md5: a6d3b8ad3d784589af177c1eb7a8cb4a
       size: 651736
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - path: data/raw/SeoulBikeData.csv
+      md5: a6d3b8ad3d784589af177c1eb7a8cb4a
+      size: 651736
+    - path: src/split_data.py
+      md5: ca9d1e82b5e7b857277f84f8cccd7f83
+      size: 1223
+    outs:
+    - path: data/processed/test_SeoulBikeData.csv
+      md5: 23b61f7ea69a1edfcd57f8f9e929aa1b
+      size: 134105
+    - path: data/processed/train_SeoulBikeData.csv
+      md5: fd2fe6d2555e59fd1a98b5049ee2e4cd
+      size: 535365
