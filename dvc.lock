@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/SeoulBikeData.csv
+      md5: 4ec879231f9c38e97dd87049bdb61c18
+      size: 604166
+    - path: src/get_data.py
+      md5: 1a578b1b0e4ea3a5289e41499315e173
+      size: 691
+    - path: src/load_data.py
+      md5: cef215f62bb4828210ea89ae958d270e
+      size: 676
+    outs:
+    - path: data/raw/SeoulBikeData.csv
+      md5: a6d3b8ad3d784589af177c1eb7a8cb4a
+      size: 651736
